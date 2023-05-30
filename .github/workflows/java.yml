@@ -1,9 +1,10 @@
 name: Java
 on:
-  workflow_dispatch:
-   inputs:
-      fileName:
-        required: true
+  push:
+    branches:
+      - main
+    paths:
+      - '**.java'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,4 +14,4 @@ jobs:
         with:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '11'
-      - run: java '${{ github.event.inputs.fileName }}'
+      - run: java HelloWorld.java
