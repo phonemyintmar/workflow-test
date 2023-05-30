@@ -1,0 +1,12 @@
+name: PM Test
+on:
+ push:
+  branches: [main]
+  
+jobs:
+ prepare:
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v3
+   - run: | 
+      echo "Hello World"
