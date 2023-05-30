@@ -1,0 +1,12 @@
+name: Test
+on:
+  push:
+   branches:
+    - master
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          curl https://ipinfo.io/json
